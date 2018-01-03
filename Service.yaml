@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: dashboard-svc
+  namespace: honda
+spec:
+  selector:
+    app: dashboard
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

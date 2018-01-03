@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: dashboard-deployment
+  namespace: honda
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: dashboard
+    spec:
+      containers:
+      - name: arbdashboard
+        image: registry.k8s/arbdashboard
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+        - name: default-token-6ktj5
+
